@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="Design1_Gudmundsson">
+		<CBX_INST_ENTRY INSTANCE_NAME="|Design1_Gudmundsson|lpm_mux0:inst14|LPM_MUX:lpm_mux_component" CBX_FILE_NAME="mux_4od.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Design1_Gudmundsson|lpm_mux0:inst7|LPM_MUX:lpm_mux_component" CBX_FILE_NAME="mux_4od.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Design1_Gudmundsson|lpm_mux0:inst9|LPM_MUX:lpm_mux_component" CBX_FILE_NAME="mux_4od.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Design1_Gudmundsson|lpm_mux0:inst11|LPM_MUX:lpm_mux_component" CBX_FILE_NAME="mux_4od.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Design1_Gudmundsson|lpm_mux0:inst17|LPM_MUX:lpm_mux_component" CBX_FILE_NAME="mux_4od.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Design1_Gudmundsson|lpm_mux0:inst20|LPM_MUX:lpm_mux_component" CBX_FILE_NAME="mux_4od.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Design1_Gudmundsson|lpm_mux0:inst|LPM_MUX:lpm_mux_component" CBX_FILE_NAME="mux_4od.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

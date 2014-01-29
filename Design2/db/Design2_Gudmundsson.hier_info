@@ -1,0 +1,338 @@
+|Design2_Gudmundsson
+BCD_A <= lpm_mux0:inst.result
+Y[1] => inst2.IN0
+Y[1] => inst2.IN1
+Y[1] => inst5.IN1
+Y[1] => inst8.IN1
+Y[1] => inst13.IN1
+Y[1] => inst12.IN1
+Y[1] => inst16.IN0
+Y[1] => inst15.IN0
+Y[1] => lpm_mux0:inst14.data0
+Y[1] => inst19.IN1
+Y[1] => inst18.IN0
+Y[1] => inst21.IN1
+Y[2] => lpm_mux0:inst.data2
+Y[2] => inst1.IN0
+Y[2] => inst1.IN1
+Y[2] => lpm_mux0:inst7.data2
+Y[2] => inst8.IN0
+Y[2] => lpm_mux0:inst9.data2
+Y[2] => inst10.IN0
+Y[2] => lpm_mux0:inst11.data2
+Y[2] => inst13.IN0
+Y[2] => inst16.IN1
+Y[2] => lpm_mux0:inst17.data2
+Y[2] => inst19.IN0
+Y[2] => inst18.IN1
+Y[2] => lpm_mux0:inst20.data2
+Y[2] => inst21.IN0
+Y[3] => lpm_mux0:inst.sel[0]
+Y[3] => lpm_mux0:inst7.sel[0]
+Y[3] => lpm_mux0:inst9.sel[0]
+Y[3] => lpm_mux0:inst11.sel[0]
+Y[3] => lpm_mux0:inst14.sel[0]
+Y[3] => lpm_mux0:inst17.sel[0]
+Y[3] => lpm_mux0:inst20.sel[0]
+Y[4] => lpm_mux0:inst.sel[1]
+Y[4] => lpm_mux0:inst7.sel[1]
+Y[4] => lpm_mux0:inst9.sel[1]
+Y[4] => lpm_mux0:inst11.sel[1]
+Y[4] => lpm_mux0:inst14.sel[1]
+Y[4] => lpm_mux0:inst17.sel[1]
+Y[4] => lpm_mux0:inst20.sel[1]
+BCD_B <= lpm_mux0:inst7.result
+BCD_C <= lpm_mux0:inst9.result
+BCD_D <= lpm_mux0:inst11.result
+BCD_E <= lpm_mux0:inst14.result
+BCD_F <= lpm_mux0:inst17.result
+BCD_G <= lpm_mux0:inst20.result
+
+
+|Design2_Gudmundsson|lpm_mux0:inst
+data0 => LPM_MUX:lpm_mux_component.DATA[0][0]
+data1 => LPM_MUX:lpm_mux_component.DATA[1][0]
+data2 => LPM_MUX:lpm_mux_component.DATA[2][0]
+data3 => LPM_MUX:lpm_mux_component.DATA[3][0]
+sel[0] => LPM_MUX:lpm_mux_component.SEL[0]
+sel[1] => LPM_MUX:lpm_mux_component.SEL[1]
+result <= LPM_MUX:lpm_mux_component.RESULT[0]
+
+
+|Design2_Gudmundsson|lpm_mux0:inst|LPM_MUX:lpm_mux_component
+data[0][0] => muxlut:$00009.data[0]
+data[1][0] => muxlut:$00009.data[1]
+data[2][0] => muxlut:$00009.data[2]
+data[3][0] => muxlut:$00009.data[3]
+sel[0] => muxlut:$00009.select[0]
+sel[1] => muxlut:$00009.select[1]
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= altshift:external_latency_ffs.result[0]
+
+
+|Design2_Gudmundsson|lpm_mux0:inst|LPM_MUX:lpm_mux_component|altshift:external_latency_ffs
+data[0] => result[0].DATAIN
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= data[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Design2_Gudmundsson|lpm_mux0:inst|LPM_MUX:lpm_mux_component|muxlut:$00009
+clock => clock_out.DATAIN
+aclr => aclr_out.DATAIN
+clken => clken_out.DATAIN
+result <= result_node.DB_MAX_OUTPUT_PORT_TYPE
+clock_out <= clock.DB_MAX_OUTPUT_PORT_TYPE
+aclr_out <= aclr.DB_MAX_OUTPUT_PORT_TYPE
+clken_out <= clken.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Design2_Gudmundsson|lpm_mux0:inst7
+data0 => LPM_MUX:lpm_mux_component.DATA[0][0]
+data1 => LPM_MUX:lpm_mux_component.DATA[1][0]
+data2 => LPM_MUX:lpm_mux_component.DATA[2][0]
+data3 => LPM_MUX:lpm_mux_component.DATA[3][0]
+sel[0] => LPM_MUX:lpm_mux_component.SEL[0]
+sel[1] => LPM_MUX:lpm_mux_component.SEL[1]
+result <= LPM_MUX:lpm_mux_component.RESULT[0]
+
+
+|Design2_Gudmundsson|lpm_mux0:inst7|LPM_MUX:lpm_mux_component
+data[0][0] => muxlut:$00009.data[0]
+data[1][0] => muxlut:$00009.data[1]
+data[2][0] => muxlut:$00009.data[2]
+data[3][0] => muxlut:$00009.data[3]
+sel[0] => muxlut:$00009.select[0]
+sel[1] => muxlut:$00009.select[1]
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= altshift:external_latency_ffs.result[0]
+
+
+|Design2_Gudmundsson|lpm_mux0:inst7|LPM_MUX:lpm_mux_component|altshift:external_latency_ffs
+data[0] => result[0].DATAIN
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= data[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Design2_Gudmundsson|lpm_mux0:inst7|LPM_MUX:lpm_mux_component|muxlut:$00009
+clock => clock_out.DATAIN
+aclr => aclr_out.DATAIN
+clken => clken_out.DATAIN
+result <= result_node.DB_MAX_OUTPUT_PORT_TYPE
+clock_out <= clock.DB_MAX_OUTPUT_PORT_TYPE
+aclr_out <= aclr.DB_MAX_OUTPUT_PORT_TYPE
+clken_out <= clken.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Design2_Gudmundsson|lpm_mux0:inst9
+data0 => LPM_MUX:lpm_mux_component.DATA[0][0]
+data1 => LPM_MUX:lpm_mux_component.DATA[1][0]
+data2 => LPM_MUX:lpm_mux_component.DATA[2][0]
+data3 => LPM_MUX:lpm_mux_component.DATA[3][0]
+sel[0] => LPM_MUX:lpm_mux_component.SEL[0]
+sel[1] => LPM_MUX:lpm_mux_component.SEL[1]
+result <= LPM_MUX:lpm_mux_component.RESULT[0]
+
+
+|Design2_Gudmundsson|lpm_mux0:inst9|LPM_MUX:lpm_mux_component
+data[0][0] => muxlut:$00009.data[0]
+data[1][0] => muxlut:$00009.data[1]
+data[2][0] => muxlut:$00009.data[2]
+data[3][0] => muxlut:$00009.data[3]
+sel[0] => muxlut:$00009.select[0]
+sel[1] => muxlut:$00009.select[1]
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= altshift:external_latency_ffs.result[0]
+
+
+|Design2_Gudmundsson|lpm_mux0:inst9|LPM_MUX:lpm_mux_component|altshift:external_latency_ffs
+data[0] => result[0].DATAIN
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= data[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Design2_Gudmundsson|lpm_mux0:inst9|LPM_MUX:lpm_mux_component|muxlut:$00009
+clock => clock_out.DATAIN
+aclr => aclr_out.DATAIN
+clken => clken_out.DATAIN
+result <= result_node.DB_MAX_OUTPUT_PORT_TYPE
+clock_out <= clock.DB_MAX_OUTPUT_PORT_TYPE
+aclr_out <= aclr.DB_MAX_OUTPUT_PORT_TYPE
+clken_out <= clken.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Design2_Gudmundsson|lpm_mux0:inst11
+data0 => LPM_MUX:lpm_mux_component.DATA[0][0]
+data1 => LPM_MUX:lpm_mux_component.DATA[1][0]
+data2 => LPM_MUX:lpm_mux_component.DATA[2][0]
+data3 => LPM_MUX:lpm_mux_component.DATA[3][0]
+sel[0] => LPM_MUX:lpm_mux_component.SEL[0]
+sel[1] => LPM_MUX:lpm_mux_component.SEL[1]
+result <= LPM_MUX:lpm_mux_component.RESULT[0]
+
+
+|Design2_Gudmundsson|lpm_mux0:inst11|LPM_MUX:lpm_mux_component
+data[0][0] => muxlut:$00009.data[0]
+data[1][0] => muxlut:$00009.data[1]
+data[2][0] => muxlut:$00009.data[2]
+data[3][0] => muxlut:$00009.data[3]
+sel[0] => muxlut:$00009.select[0]
+sel[1] => muxlut:$00009.select[1]
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= altshift:external_latency_ffs.result[0]
+
+
+|Design2_Gudmundsson|lpm_mux0:inst11|LPM_MUX:lpm_mux_component|altshift:external_latency_ffs
+data[0] => result[0].DATAIN
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= data[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Design2_Gudmundsson|lpm_mux0:inst11|LPM_MUX:lpm_mux_component|muxlut:$00009
+clock => clock_out.DATAIN
+aclr => aclr_out.DATAIN
+clken => clken_out.DATAIN
+result <= result_node.DB_MAX_OUTPUT_PORT_TYPE
+clock_out <= clock.DB_MAX_OUTPUT_PORT_TYPE
+aclr_out <= aclr.DB_MAX_OUTPUT_PORT_TYPE
+clken_out <= clken.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Design2_Gudmundsson|lpm_mux0:inst14
+data0 => LPM_MUX:lpm_mux_component.DATA[0][0]
+data1 => LPM_MUX:lpm_mux_component.DATA[1][0]
+data2 => LPM_MUX:lpm_mux_component.DATA[2][0]
+data3 => LPM_MUX:lpm_mux_component.DATA[3][0]
+sel[0] => LPM_MUX:lpm_mux_component.SEL[0]
+sel[1] => LPM_MUX:lpm_mux_component.SEL[1]
+result <= LPM_MUX:lpm_mux_component.RESULT[0]
+
+
+|Design2_Gudmundsson|lpm_mux0:inst14|LPM_MUX:lpm_mux_component
+data[0][0] => muxlut:$00009.data[0]
+data[1][0] => muxlut:$00009.data[1]
+data[2][0] => muxlut:$00009.data[2]
+data[3][0] => muxlut:$00009.data[3]
+sel[0] => muxlut:$00009.select[0]
+sel[1] => muxlut:$00009.select[1]
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= altshift:external_latency_ffs.result[0]
+
+
+|Design2_Gudmundsson|lpm_mux0:inst14|LPM_MUX:lpm_mux_component|altshift:external_latency_ffs
+data[0] => result[0].DATAIN
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= data[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Design2_Gudmundsson|lpm_mux0:inst14|LPM_MUX:lpm_mux_component|muxlut:$00009
+clock => clock_out.DATAIN
+aclr => aclr_out.DATAIN
+clken => clken_out.DATAIN
+result <= result_node.DB_MAX_OUTPUT_PORT_TYPE
+clock_out <= clock.DB_MAX_OUTPUT_PORT_TYPE
+aclr_out <= aclr.DB_MAX_OUTPUT_PORT_TYPE
+clken_out <= clken.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Design2_Gudmundsson|lpm_mux0:inst17
+data0 => LPM_MUX:lpm_mux_component.DATA[0][0]
+data1 => LPM_MUX:lpm_mux_component.DATA[1][0]
+data2 => LPM_MUX:lpm_mux_component.DATA[2][0]
+data3 => LPM_MUX:lpm_mux_component.DATA[3][0]
+sel[0] => LPM_MUX:lpm_mux_component.SEL[0]
+sel[1] => LPM_MUX:lpm_mux_component.SEL[1]
+result <= LPM_MUX:lpm_mux_component.RESULT[0]
+
+
+|Design2_Gudmundsson|lpm_mux0:inst17|LPM_MUX:lpm_mux_component
+data[0][0] => muxlut:$00009.data[0]
+data[1][0] => muxlut:$00009.data[1]
+data[2][0] => muxlut:$00009.data[2]
+data[3][0] => muxlut:$00009.data[3]
+sel[0] => muxlut:$00009.select[0]
+sel[1] => muxlut:$00009.select[1]
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= altshift:external_latency_ffs.result[0]
+
+
+|Design2_Gudmundsson|lpm_mux0:inst17|LPM_MUX:lpm_mux_component|altshift:external_latency_ffs
+data[0] => result[0].DATAIN
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= data[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Design2_Gudmundsson|lpm_mux0:inst17|LPM_MUX:lpm_mux_component|muxlut:$00009
+clock => clock_out.DATAIN
+aclr => aclr_out.DATAIN
+clken => clken_out.DATAIN
+result <= result_node.DB_MAX_OUTPUT_PORT_TYPE
+clock_out <= clock.DB_MAX_OUTPUT_PORT_TYPE
+aclr_out <= aclr.DB_MAX_OUTPUT_PORT_TYPE
+clken_out <= clken.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Design2_Gudmundsson|lpm_mux0:inst20
+data0 => LPM_MUX:lpm_mux_component.DATA[0][0]
+data1 => LPM_MUX:lpm_mux_component.DATA[1][0]
+data2 => LPM_MUX:lpm_mux_component.DATA[2][0]
+data3 => LPM_MUX:lpm_mux_component.DATA[3][0]
+sel[0] => LPM_MUX:lpm_mux_component.SEL[0]
+sel[1] => LPM_MUX:lpm_mux_component.SEL[1]
+result <= LPM_MUX:lpm_mux_component.RESULT[0]
+
+
+|Design2_Gudmundsson|lpm_mux0:inst20|LPM_MUX:lpm_mux_component
+data[0][0] => muxlut:$00009.data[0]
+data[1][0] => muxlut:$00009.data[1]
+data[2][0] => muxlut:$00009.data[2]
+data[3][0] => muxlut:$00009.data[3]
+sel[0] => muxlut:$00009.select[0]
+sel[1] => muxlut:$00009.select[1]
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= altshift:external_latency_ffs.result[0]
+
+
+|Design2_Gudmundsson|lpm_mux0:inst20|LPM_MUX:lpm_mux_component|altshift:external_latency_ffs
+data[0] => result[0].DATAIN
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= data[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Design2_Gudmundsson|lpm_mux0:inst20|LPM_MUX:lpm_mux_component|muxlut:$00009
+clock => clock_out.DATAIN
+aclr => aclr_out.DATAIN
+clken => clken_out.DATAIN
+result <= result_node.DB_MAX_OUTPUT_PORT_TYPE
+clock_out <= clock.DB_MAX_OUTPUT_PORT_TYPE
+aclr_out <= aclr.DB_MAX_OUTPUT_PORT_TYPE
+clken_out <= clken.DB_MAX_OUTPUT_PORT_TYPE
+
+

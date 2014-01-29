@@ -1,0 +1,9 @@
+Fitter Status : Successful - Tue May 07 10:57:30 2013
+Quartus II Version : 9.0 Build 235 06/17/2009 SP 2 SJ Full Version
+Revision Name : Design3_Gudmundsson
+Top-level Entity Name : Design3_Gudmundsson
+Family : MAX7000S
+Device : EPM7128SLC84-7
+Timing Models : Final
+Total macrocells : 38 / 128 ( 30 % )
+Total pins : 12 / 68 ( 18 % )
